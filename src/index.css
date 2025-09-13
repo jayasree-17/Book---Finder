@@ -1,0 +1,205 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1b2735, #090a0f); /* cosmic gradient */
+  color: #ffffff;
+  text-align: center;
+  min-height: 100vh;
+}
+
+/* --- Title Animation --- */
+@keyframes titleIntro {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    text-shadow: none;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    text-shadow: 0 0 12px #4db8ff, 0 0 24px #1ec0ff;
+  }
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #64ffda;
+  text-shadow: 0 0 12px #4db8ff, 0 0 24px #1ec0ff;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  animation: titleIntro 1s ease forwards;
+}
+
+.title:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 20px #66fcf1, 0 0 40px #45a29e;
+}
+
+/* --- Subtitle Animation --- */
+@keyframes subtitleIntro {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #8892b0;
+  opacity: 0;
+  animation: subtitleIntro 1s ease forwards;
+  animation-delay: 1s;
+}
+
+/* --- Search Bar Animation --- */
+@keyframes searchIntro {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: searchIntro 1s ease forwards;
+  animation-delay: 2s;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 280px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #1ec0ff;
+  color: #0a192f;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.search-bar button:hover {
+  background-color: #4db8ff;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #1ec0ff;
+}
+
+/* --- Books Layout (3 per row) --- */
+.books {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+}
+
+.book-card {
+  background: #112240;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  /* ✅ Removed animations so books appear instantly */
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #1ec0ff;
+}
+
+.book-card img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.book-card h3 {
+  font-size: 1rem;
+  margin: 10px 0 5px;
+  color: #64ffda;
+}
+
+.book-card p {
+  font-size: 0.9rem;
+  color: #8892b0;
+  margin: 0;
+}
+
+/* --- Expanded Info --- */
+.book-info {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #d1d5db;
+  line-height: 1.4;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+}
+
+.book-card.active .book-info {
+  max-height: 200px;
+}
+
+/* --- Loading Spinner --- */
+.spinner {
+  margin: 50px auto;
+  border: 5px solid #233554;
+  border-top: 5px solid #1ec0ff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Footer --- */
+footer {
+  margin-top: 40px;
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #8892b0;
+  border-top: 1px solid #233554;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 900px) {
+  .books {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .books {
+    grid-template-columns: 1fr;
+  }
+}

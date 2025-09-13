@@ -1,0 +1,53 @@
+# 📚 Book Finder App
+
+## 🌟 Overview
+The **Book Finder App** is a lightweight and user-friendly React application that helps users discover books quickly.  
+It connects to the **Open Library API** and allows searching by **book title** or **author name**.  
+
+This project was built as part of a **Take-Home Challenge** to demonstrate the ability to interpret requirements, design solutions, and implement them effectively.
+
+---
+
+## 🚀 Features
+- 🔍 Search for books by **title** or **author**  
+- 🖼️ Display **book covers** (when available)  
+- ✍️ Show **author names** and **publish year**  
+- 📱 Responsive, mobile-friendly design  
+- ⚡ Built with **React + Vite** for fast performance  
+- 🎨 Styled using **Tailwind CSS**  
+- 🛡️ Graceful error handling (e.g., when no results are found)  
+
+---
+
+## 🛠️ Tech Stack
+- **Framework**: React (with Vite)  
+- **Styling**: Tailwind CSS  
+- **API**: Open Library API  
+- **Deployment**: CodeSandbox  
+
+---
+
+## 📖 How to Use
+1. Open the **Live Demo link** (provided below).  
+2. Enter a **book title** or **author name** in the search bar.  
+3. Click **Search**.  
+4. Browse the results with cover image, title, author, and publish year.  
+
+---
+
+## 🔮 Future Enhancements
+- Add **pagination** for large results.  
+- Introduce a **loading spinner** while fetching data.  
+- Enable search by **ISBN**.  
+- Add **dark mode** support for better UX.  
+
+---
+
+## 🔗 Links
+- **Live Demo**: [Book Finder App](https://your-sandbox-id.csb.app)  
+- **Source Code**: [CodeSandbox Project](https://codesandbox.io/p/devbox/your-sandbox-id)  
+
+---
+
+ **Author**: Jayasree  
+ **Submission**: Take-Home Challenge  
